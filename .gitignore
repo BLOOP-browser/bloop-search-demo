@@ -1,3 +1,5 @@
 node_modules
 *lock*
 public
+public/*
+.DS_Store
