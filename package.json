@@ -2,7 +2,7 @@
   "name": "bloop-search-demo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://demo.getbloop.co", 
+  "homepage": "https://demo.getbloop.co",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -43,9 +43,10 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
+    ] 
   },
   "devDependencies": {
     "create-react-component-folder": "^0.3.7"
+    
   }
 }
