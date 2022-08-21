@@ -23,7 +23,7 @@ function App() {
       <SearchResultComponent results={results.results}></SearchResultComponent>
       <RecentSearches/>
       <RecentRecs/>
-      
+      <div className="App-footer"></div>
     </div>
   );
 }

@@ -18,19 +18,20 @@
 .App-searchwrap {
   position: flex;
   text-align: center;
-  padding: 50px;
-  
+  padding-top: 3vw;
+  padding-bottom: 4vw;
 }
 
 .App-searchbarcss{
-  font-size: calc(10px + .5vmin);
-  width: 40vw;
-  height: 30px;
+  font-size: calc(12px + .5vmin);
+  width: 50vw;
+  max-width: 400px;
+  height: calc(30px + .5vw);
   fill: #f867d1;
   border-color:#282c34;
   border-radius: 18px;
   border-width: 4px;
-  text-indent: 0.5em;
+  text-indent: 5%;
 }
 
 .App-link {
@@ -47,6 +48,10 @@
   display: grid;
   grid-template-columns: 10rem 10rem 10rem;
   grid-gap: 1rem;
+}
+
+.App-footer{
+  height: 10vh;
 }
 
 /* @keyframes App-logo-spin {
