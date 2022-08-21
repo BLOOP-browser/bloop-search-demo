@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <div className = "App-logo"> <img src="BLOOP-together.svg" /></div>
-      <div className = "App-header"> <SearchBar onSearchResults={onSearchResults}></SearchBar></div>
+      <div className = "App-searchwrap"> <SearchBar onSearchResults={onSearchResults}></SearchBar></div>
       <SearchResultComponent results={results.results}></SearchResultComponent>
       <RecentSearches/>
       <RecentRecs/>

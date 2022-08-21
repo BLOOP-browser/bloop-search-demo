@@ -3,9 +3,10 @@
 }
 
 .App-logo {
-  height: 30vmin;
+  height: 30vh;
   pointer-events: none;
   padding-top: 50px;
+  padding-bottom: 10px;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
@@ -14,28 +15,22 @@
   }
 } */
 
-.App-header {
-  /*background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
-  font-size: calc(10px + 2vmin);
-  color: white;
-  border:#282c34;
-  border-radius: 20%;
-  border-width: 10px;
-  padding-block: 50px;
+.App-searchwrap {
+  position: flex;
+  text-align: center;
+  padding: 50px;
+  
 }
 
 .App-searchbarcss{
-  font-size: calc(10px + 2vmin);
-  color: rgb(170, 89, 89);
-  border:#282c34;
-  border-radius: 20%;
-  border-width: 10px;
-  
+  font-size: calc(10px + .5vmin);
+  width: 40vw;
+  height: 30px;
+  fill: #f867d1;
+  border-color:#282c34;
+  border-radius: 18px;
+  border-width: 4px;
+  text-indent: 0.5em;
 }
 
 .App-link {

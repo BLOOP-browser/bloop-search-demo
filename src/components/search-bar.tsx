@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import '../App.css';
 import Result from '../types/results'
 import axios from 'axios'
 
@@ -45,8 +44,9 @@ export function SearchBar(props: any) {
         })
     }
 
-    return <div className='searchbarcss' ref={ref}>
-        <input 
+    return <div  ref={ref}>
+        <input className="App-searchbarcss"
+            placeholder= "See what people recommend for..."
             value={inputData.search} 
             onChange={(e) => {
                 handleOnChange(e)}}>
