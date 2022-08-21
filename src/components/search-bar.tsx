@@ -13,30 +13,6 @@ type SearchBarProps = {
 export function SearchBar(props: any) {
     let ref = useRef<HTMLDivElement>(null);
     const [inputData, setInputData ] = useState({search: ''})
-    useEffect(() => {
-        if (ref.current) {
-            ref.current.addEventListener('keydown', (e: any) => {
-                if (e.key === 'Enter') {
-                    let results: Array<Result> = []
-                    axios.get(ES_CLUSTER_HOST, {
-                        headers: {
-                            "Content-Type" : "application/json",
-                            "Authorization" : "ApiKey " + READONLY_API_KEY
-                        },
-                        params: {
-                            source: JSON.stringify({query: {query_string: {query: inputData.search}}}), source_content_type: 'application/json'
-                        },
-                    }).then((response) => {
-                        console.log(response)
-                        response.data.hits.hits.forEach((hit: any) => {
-                            results.push(hit._source)
-                            props.onSearchResults(results)
-                        })
-                    })
-                }
-            })
-        }
-    })
 
     const handleOnChange = (e: any) => {
         return setInputData((state) => {
@@ -48,6 +24,28 @@ export function SearchBar(props: any) {
         <input className="App-searchbarcss"
             placeholder= "See what people recommend for..."
             value={inputData.search} 
+            onKeyDown={
+                (e: any) => {
+                    if (e.key === 'Enter' && inputData.search.length > 0) {
+                        let results: Array<Result> = []
+                        props.onSearchResults([])
+                        axios.get(ES_CLUSTER_HOST, {
+                            headers: {
+                                "Content-Type" : "application/json",
+                                "Authorization" : "ApiKey " + READONLY_API_KEY
+                            },
+                            params: {
+                                source: JSON.stringify({query: {query_string: {query: inputData.search}}}), source_content_type: 'application/json'
+                            },
+                        }).then((response) => {
+                            response.data.hits.hits.forEach((hit: any) => {
+                                results.push(hit._source)
+                            })
+                            props.onSearchResults(results)
+                        })
+                    }
+                }
+            }
             onChange={(e) => {
                 handleOnChange(e)}}>
         </input>

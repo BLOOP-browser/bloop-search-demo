@@ -18,7 +18,6 @@ export function IndividualResultComponent(props: IndividualResultComponentProps)
             onTitleUpdate(cheerio.load(html)("title").text())
         })
     } catch (exception: any) {
-        console.log("is this running?")
         if (exception.code === "ERR_BAD_REQUEST") {
             try {
                 axios.get(props.result.link.replace("https", "http")).then((response)=> {
@@ -45,13 +44,11 @@ export function IndividualResultComponent(props: IndividualResultComponentProps)
 
 export function SearchResultComponent(props: SearchResultComponentProps) {
     const results = props.results;
-    useState({title: 'title'})
     const listItems = results.map((result) => {
         
         
         return <IndividualResultComponent result={result}></IndividualResultComponent>
     });
-    
     return (
         <ul>{listItems}</ul>
     );

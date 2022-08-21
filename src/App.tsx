@@ -12,14 +12,16 @@ function App() {
   const [results, setResults] = useState(
     {results: new Array<Result>()}
   )
-
-  const onSearchResults = (results: Array<Result>) => {
-    setResults({results: results})
-  }
   return (
     <div className="App">
       <div className = "App-logo"> <img src="BLOOP-together.svg" /></div>
-      <div className = "App-searchwrap"> <SearchBar onSearchResults={onSearchResults}></SearchBar></div>
+      <div className = "App-searchwrap"> 
+      <SearchBar onSearchResults={
+      (inputResults: Array<Result>) => {
+        setResults({results: inputResults})
+      }}>
+      </SearchBar>
+      </div>
       <SearchResultComponent results={results.results}></SearchResultComponent>
       <RecentSearches/>
       <RecentRecs/>
