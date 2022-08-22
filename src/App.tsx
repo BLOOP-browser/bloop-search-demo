@@ -5,7 +5,7 @@ import { SearchResultComponent } from './components/search-results';
 import Result from './types/results';
 import RecentSearches from './components/recent-searches'
 import RecentRecs from './components/recent-recs'
-
+import { Link } from 'react-router-dom'
 
 
 function App() {
@@ -22,7 +22,8 @@ function App() {
       }}>
       </SearchBar>
       </div>
-      {/* <a href="/route">"would you like to recommend something?" </a> */}
+      <Link to="/recs">Recommendations?</Link><br/>
+      {results.results.length ? <h2> Search Results </h2> : ""}
       <SearchResultComponent results={results.results}></SearchResultComponent>
       {/* <RecentSearches/> */}
       <RecentRecs/>
