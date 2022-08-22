@@ -1,11 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Result from '../types/results'
-import axios from 'axios'
-
-
-const ES_CLUSTER_HOST = 'https://bloop-demo-search.es.us-east-2.aws.elastic-cloud.com/bloop-search-demo/_search/';
-const READONLY_API_KEY = 'T0QzLXNZSUIxZ2d1ZFYyYk1PaEY6MEx0T0ZtM2dSV215SExKcHlzRk54Zw=='
-
+import Result from '../types/results';
+import axios from 'axios';
+import { performFuzzyQuery } from '../utils/elastic-utils';
 type SearchBarProps = {
     onSearchresults(results: Array<Result>): null;
 }
@@ -29,19 +25,11 @@ export function SearchBar(props: any) {
                     if (e.key === 'Enter' && inputData.search.length > 0) {
                         let results: Array<Result> = []
                         props.onSearchResults([])
-                        axios.get(ES_CLUSTER_HOST, {
-                            headers: {
-                                "Content-Type" : "application/json",
-                                "Authorization" : "ApiKey " + READONLY_API_KEY
-                            },
-                            params: {
-                                source: JSON.stringify({query: {query_string: {query: inputData.search}}}), source_content_type: 'application/json'
-                            },
-                        }).then((response) => {
+                        performFuzzyQuery(inputData.search, (response: any) => {
                             response.data.hits.hits.forEach((hit: any) => {
                                 results.push(hit._source)
                             })
-                            props.onSearchResults(results)
+                            props.onSearchResults(results) 
                         })
                     }
                 }

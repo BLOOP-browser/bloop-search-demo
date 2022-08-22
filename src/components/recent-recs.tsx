@@ -1,25 +1,34 @@
+import React, {useEffect, useState} from 'react';
+import Result from '../types/results';
+import IndividualResultComponent from './individual-result'
+import { peformQueryRecent } from "../utils/elastic-utils";
 
-import React from 'react'
-import Result from '../types/results'
-
+export default function RecentRecs() {
+    const [recentResults, setResentResults] = useState({results: new Array<Result>()})
+    useEffect(() => {
+      peformQueryRecent((response: any) => {
+        let resultsFromQuery: Array<Result> = [];
+        let counter = 0;
+        response.data.hits.hits.forEach((hit: any) => {
+          if (counter < 3) {
+            resultsFromQuery.push(hit._source)
+          }
+          counter += 1
+        })
+        setResentResults({results: resultsFromQuery}) 
+      })
+    }, [])
+    const listItems = recentResults.results.map((result) => {
+        return <IndividualResultComponent result={result}></IndividualResultComponent>
+    });
+    return (
+      <div className="recentRecs">
+      <h2>Recent recommendations </h2>
+        <ul>{listItems}</ul>
+      </div>
+    );
+}
 
 type indexedLinks = {
     indexed(results: Array<Result>): null;
-}
-
-export default function RecentRecs () {
-  
-  return (
-    // const terms = props.terms; 
-    
-    <div className="recentRecs">
-        <h2>Recent recommendations </h2>
-      <div className="item">Recent rec 1</div>
-      <div className="item">Recent rec 2</div>
-      <div className="item">Recent rec 3</div>
-      <div className="item">Recent rec 4</div>
-      <div className="item">Recent rec 5</div>
-      <div className="item">Recent rec 6</div>
-    </div>
-  )
 }

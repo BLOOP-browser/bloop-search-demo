@@ -22,8 +22,9 @@ function App() {
       }}>
       </SearchBar>
       </div>
+      {/* <a href="/route">"would you like to recommend something?" </a> */}
       <SearchResultComponent results={results.results}></SearchResultComponent>
-      <RecentSearches/>
+      {/* <RecentSearches/> */}
       <RecentRecs/>
       <div className="App-footer"></div>
     </div>
