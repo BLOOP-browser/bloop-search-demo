@@ -23,6 +23,7 @@
 }
 
 .App-searchbarcss{
+  margin-bottom: 40px;
   font-size: calc(12px + .5vmin);
   width: 50vw;
   max-width: 400px;
