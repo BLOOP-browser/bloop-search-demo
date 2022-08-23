@@ -22,9 +22,9 @@ export default function RecentRecs() {
         return <IndividualResultComponent result={result}></IndividualResultComponent>
     });
     return (
-      <div className="recentRecs">
+      <div>
       <h2>Recent recommendations </h2>
-        <ul>{listItems}</ul>
+        <ul  className="App-recentRecs">{listItems}</ul>
       </div>
     );
 }

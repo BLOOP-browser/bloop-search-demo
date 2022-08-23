@@ -39,19 +39,49 @@
 }
 
 .App-recentSearches{
+  align-content: space-between;
+  justify-content: space-around;
+  justify-items: left;
+  align-items: left;
+  padding-inline: 10%;
   display: grid;
-  grid-template-columns: 10rem 10rem 10rem;
+  grid-template-columns: 10rem 10rem;
   grid-gap: 1rem;
+  text-align: left;
+  max-width: 80%;
 }
 
 .App-recentRecs{
+  align-content: space-between;
+  justify-content: space-around;
+  justify-items: left;
+  align-items: left;
+  padding-inline: 10%;
   display: grid;
-  grid-template-columns: 10rem 10rem 10rem;
-  grid-gap: 1rem;
+  grid-template-columns: 30% 30%;
+  grid-gap: 50px;
+  text-align: left;
+  max-width: 80%;
 }
 
 .App-footer{
   height: 10vh;
+}
+
+.App-button{
+  
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  max-width: 50%;
+}
+
+h2 {
+  padding-top: 50px;
 }
 
 /* @keyframes App-logo-spin {
