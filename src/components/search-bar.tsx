@@ -18,7 +18,7 @@ export function SearchBar(props: any) {
 
     return <div  ref={ref}>
         <input className="App-searchbarcss"
-            placeholder= "See what people recommend for..."
+            placeholder= "See what people indexed for →"
             value={inputData.search} 
             onKeyDown={
                 (e: any) => {

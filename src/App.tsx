@@ -23,9 +23,12 @@ function App() {
       </SearchBar>
       </div>
       <Link  className="App-button"  to="/recs">Want to index something?</Link><br/>
-      {results.results.length ? <h2> Search Results </h2> : ""}
+      {results.results.length ? <h2> <br></br>Search Results </h2> : <h3> <br></br>Nothing indexed yet. You can index something with the button above :D </h3>}
       <SearchResultComponent results={results.results}></SearchResultComponent>
+      
+      <hr></hr>
       <RecentSearches/>
+      <hr></hr>
       <RecentRecs/>
       <div className="App-footer"></div>
     </div>
