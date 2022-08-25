@@ -46,7 +46,7 @@
   justify-content: space-around;
   justify-items: left;
   align-items: left;
-  font-size: 1.1em;
+  font-size: 2.2em;
   padding-inline: 10vw;
   padding-bottom: 10vw;
   display: grid;
@@ -78,10 +78,10 @@
 }
 
 .App-button{
-  background-color: rgb(64, 60, 65);
-  text-decoration: none;
-  color: white;
-  font-size: 1em;
+  /* background-color: rgb(64, 60, 65); */
+  /* text-decoration: none; */
+  color: rgb(0, 11, 228);
+  font-size: 2.1em;
   padding: 15px 20px;
   border-radius: .5em;
   margin: 10px 0px;
@@ -93,12 +93,13 @@ h2 {
   padding-top: 5px;
   padding-bottom: 2em;
   color: #302d29;
-  font-size: 2em;
+  font-size: 2.7em;
 }
 
 h3{
   padding-top: 35px;
   color: #FF9839;
+  font-size: 2.5em;
   margin-inline: 50px;
 }
 
