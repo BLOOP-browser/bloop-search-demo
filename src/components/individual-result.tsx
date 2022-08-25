@@ -36,7 +36,7 @@ export default function IndividualResultComponent(props: IndividualResultCompone
         setTitle({title: title})
     }
     return <div>
-        <a href={workingLink.link}>{title.title}</a>
+        <a href={workingLink.link}>{title.title.length > 0 ? title.title : workingLink.link}</a>
         <p>{props.result.description}</p> 
     </div>
 }
