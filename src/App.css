@@ -3,10 +3,12 @@
 }
 
 .App-logo {
-  height: 30vh;
+  /* height: 30vh; */
+  width: 70vw;
+  max-height: 400px;
   pointer-events: none;
-  padding-top: 50px;
-  padding-bottom: 10px;
+  padding-top: 15vw; 
+  padding-bottom: 10vw;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
@@ -23,15 +25,15 @@
 }
 
 .App-searchbarcss{
-  margin-bottom: 40px;
-  font-size: calc(12px + .5vmin);
-  width: 50vw;
-  max-width: 400px;
-  height: calc(30px + .5vw);
+  margin-block: 5vw; 
+  font-size: 2.3em;
+  width: 80vw;
+  max-width: 600px;
+  height: 2.3em;
   fill: #f867d1;
   border-color:#282c34;
-  border-radius: 18px;
-  border-width: 4px;
+  border-radius: 1em;
+  border-width: 5px;
   text-indent: 5%;
 }
 
@@ -44,12 +46,13 @@
   justify-content: space-around;
   justify-items: left;
   align-items: left;
-  padding-inline: 10%;
+  font-size: 1.1em;
+  padding-inline: 10vw;
+  padding-bottom: 10vw;
   display: grid;
   grid-template-columns: 10rem 10rem;
-  grid-gap: 1rem;
+  grid-gap: .5rem;
   text-align: left;
-  max-width: 80%;
 }
 
 .App-recentRecs{
@@ -57,12 +60,17 @@
   justify-content: space-around;
   justify-items: left;
   align-items: left;
-  padding-inline: 10%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  /* padding-inline: 10%; */
   display: grid;
-  grid-template-columns: 30% 30%;
-  grid-gap: 50px;
+  grid-template-columns: 80vw;
+  /* grid-gap: 50px; */
   text-align: left;
   max-width: 80%;
+  margin-left: 10vw;
+  font-size: 1.1em;
 }
 
 .App-footer{
@@ -70,23 +78,42 @@
 }
 
 .App-button{
-  background-color: black;
+  background-color: rgb(64, 60, 65);
+  text-decoration: none;
   color: white;
-  font-size: calc(14px + .5vmin);
-  padding: 10px 20px;
-  border-radius: 5px;
+  font-size: 1em;
+  padding: 15px 20px;
+  border-radius: .5em;
   margin: 10px 0px;
   cursor: pointer;
   max-width: 50%;
 }
 
 h2 {
-  padding-top: 50px;
+  padding-top: 5px;
+  padding-bottom: 2em;
+  color: #302d29;
+  font-size: 2em;
+}
+
+h3{
+  padding-top: 35px;
+  color: #FF9839;
+  margin-inline: 50px;
+}
+
+.App-results{
+  list-style-type: none;
+  margin-inline: 5vw;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  margin-bottom: 10vw;
 }
 
 .item{
-  background-color: grey;
-  color: white;
+  /* background-color: grey; */
+  color: grey;
   border-radius: 18px;
   padding: 5px 13px;
   border-color: black;
