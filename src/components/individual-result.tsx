@@ -33,10 +33,12 @@ export default function IndividualResultComponent(props: IndividualResultCompone
     }
     
     const onTitleUpdate = (title: string) => {
-        setTitle({title: title})
+        if (title.length > 0 && title !== ' ') {
+            setTitle({title: title})
+        }
     }
     return <div>
-        <a href={workingLink.link}>{title.title.length > 0 ? title.title : workingLink.link}</a>
+        <a href={workingLink.link}>{workingLink.link}</a>
         <p>{props.result.description}</p> 
     </div>
 }
