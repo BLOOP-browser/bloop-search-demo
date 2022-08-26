@@ -1,7 +1,6 @@
 import React, { useState, useEffect, createRef } from 'react';
 import FormInput from './form-input';
 import { postContent } from '../utils/elastic-utils'
-import { link } from 'fs';
 export default function Recommendations() {
     let formRef = createRef<HTMLFormElement>()
     const [linkValue, setLinkValue] = useState({value: "Please Enter Link"})
@@ -19,10 +18,15 @@ export default function Recommendations() {
     })
 
     const submit = () => {
-        postContent({description: descriptionValue.value, link: linkValue.value}, (response: any) => {
+        let description = descriptionValue.value
+        description = description.replace('Please Enter Link', '')
+        let link = linkValue.value
+        link = link.replace('Please Enter Link', '')
+        postContent({description: description, link: link}, (response: any) => {
             console.log(response)
         })
         setVisValue({visibility: true})
+
     }
     
     return(
