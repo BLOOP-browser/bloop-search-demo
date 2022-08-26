@@ -4,12 +4,12 @@ import IndividualResultComponent from './individual-result'
 import axios from 'axios'
 import cheerio from 'cheerio'
 import '../App.css';
+import { Link } from 'react-router-dom'
+
+const DEFAULT_EMPTY = "Oops! Looks like your search does not have results yet, would you like to"  
 
 type SearchResultComponentProps = {
     results: Array<Result>;
-}
-type IndividualResultComponentProps = {
-    result: Result;
 }
 
 export function SearchResultComponent(props: SearchResultComponentProps) {
@@ -22,6 +22,8 @@ export function SearchResultComponent(props: SearchResultComponentProps) {
     });
     
     return (
-        <ul className='App-results'>{listItems}</ul>
+        <div>
+            { listItems.length > 0 ? <ul className='App-results'>{listItems}</ul> : <p> {DEFAULT_EMPTY} <Link to="/recs"> submit something instead? </Link> </p> }
+        </div>
     );
 }
