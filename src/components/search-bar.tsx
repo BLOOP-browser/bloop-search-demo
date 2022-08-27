@@ -1,7 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Result from '../types/results';
-import axios from 'axios';
 import { performFuzzyQuery } from '../utils/elastic-utils';
+import { datadogLogs } from '@datadog/browser-logs'
+
+datadogLogs.init({
+  clientToken: 'pubc45e0dc2931024cf7bb1d5593f656a5a',
+  site: 'datadoghq.com',
+  forwardErrorsToLogs: false,
+  sampleRate: 100,
+})
+console.log("APP_STARTED")
+datadogLogs.logger.info("APP_STARTED")
+
 type SearchBarProps = {
     onSearchresults(results: Array<Result>): null;
 }
@@ -11,7 +21,7 @@ export function SearchBar(props: any) {
     const [inputData, setInputData ] = useState({search: ''})
 
     const handleOnChange = (e: any) => {
-        return setInputData((state) => {
+        return setInputData(() => {
             return {search: e.target.value}
         })
     }
@@ -30,7 +40,12 @@ export function SearchBar(props: any) {
                             response.data.hits.hits.forEach((hit: any) => {
                                 results.push(hit._source)
                             })
-                            props.onSearchResults(results) 
+                            props.onSearchResults(results)
+                            datadogLogs.logger.info("SEARCH_RESULTS", {
+                                searchTerm: inputData.search,
+                                results: results,
+                            })
+                            console.log("should have ran")
                         })
                     }
                 }

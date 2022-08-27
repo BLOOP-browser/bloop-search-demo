@@ -9,8 +9,7 @@ import {
   Route,
 } from "react-router-dom";
 import Suggestions from './routes/suggestions';
-//import reactbootstrap from 'react-bootstrap';
-//import 'bootstrap';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
