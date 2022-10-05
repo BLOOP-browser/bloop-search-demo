@@ -66,11 +66,10 @@
   /* padding-inline: 10%; */
   display: grid;
   grid-template-columns: 80vw;
-  /* grid-gap: 50px; */
+  grid-gap: 30px;
   text-align: left;
   max-width: 80%;
-  margin-left: 10vw;
-  font-size: 1.1em;
+  font-size: 1.6em;
 }
 
 .App-footer{
@@ -91,30 +90,46 @@
 
 h2 {
   padding-top: 5px;
-  padding-bottom: 2em;
   color: #302d29;
   font-size: 2.7em;
+  max-width: 90vw;
 }
 
 h3{
   padding-top: 35px;
-  color: #FF9839;
-  font-size: 2.5em;
+  font-size: 2em;
   margin-inline: 50px;
 }
 
 .App-results{
-  list-style-type: none;
-  margin-inline: 5vw;
+  /* list-style-type: none;
+  margin-block: 50px;
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
-  margin-bottom: 10vw;
+  font-size: 2.1em;
+  max-width: 50%; */
+
+  align-content: space-between;
+  justify-content: space-around;
+  justify-items: left;
+  align-items: left;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  padding-inline: 10%;
+  display: grid;
+  grid-template-columns: 80vw;
+  grid-gap: 30px;
+  text-align: left;
+  margin-block-start: 50px;
+  max-width: 80%;
+  font-size: 1.6em;
 }
 
 .item{
-  /* background-color: grey; */
-  color: grey;
+  background-color: grey;
+  color: white;
   border-radius: 18px;
   padding: 5px 13px;
   border-color: black;

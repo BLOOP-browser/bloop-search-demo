@@ -22,8 +22,8 @@ function App() {
       }}>
       </SearchBar>
       </div>
-      <Link  className="App-button"  to="/recs">Want to index something?</Link><br/>
-      {results.results.length ? <h2> <br></br>Search Results </h2> :  <h3><br></br> Type a search term, and press enter to search. If Search Results don't appear, nothing is indexed yet for this term. </h3> }
+      <Link  className="App-button"  to="/recs">Got a website recommendation?</Link><br/>
+      {results.results.length ? <h2> <br></br>Search Results </h2> :  <h3><br></br>  </h3> }
       
       <SearchResultComponent results={results.results}></SearchResultComponent>
       

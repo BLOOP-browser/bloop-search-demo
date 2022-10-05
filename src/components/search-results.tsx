@@ -23,7 +23,7 @@ export function SearchResultComponent(props: SearchResultComponentProps) {
     
     return (
         <div>
-            { listItems.length > 0 ? <ul className='App-results'>{listItems}</ul> : <p> {DEFAULT_EMPTY} <Link to="/recs"> submit something instead? </Link> </p> }
+            { listItems.length > 0 ? <ul className='App-results'>{listItems}</ul> : <h3> {DEFAULT_EMPTY} <Link to="/recs"> submit something instead? </Link> </h3> }
         </div>
     );
 }

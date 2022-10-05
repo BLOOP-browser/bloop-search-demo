@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Result from '../types/results';
 import { performFuzzyQuery } from '../utils/elastic-utils';
+/* UNCOMMMENT */
 import { datadogLogs } from '@datadog/browser-logs'
 
 datadogLogs.init({
@@ -11,6 +12,7 @@ datadogLogs.init({
 })
 console.log("APP_STARTED")
 datadogLogs.logger.info("APP_STARTED")
+
 
 type SearchBarProps = {
     onSearchresults(results: Array<Result>): null;
@@ -28,7 +30,7 @@ export function SearchBar(props: any) {
 
     return <div  ref={ref}>
         <input className="App-searchbarcss"
-            placeholder= "See what people recommend for..."
+            placeholder= "Search curated websites..."
             type="search"
             value={inputData.search} 
             onKeyDown={
@@ -41,7 +43,7 @@ export function SearchBar(props: any) {
                                 results.push(hit._source)
                             })
                             props.onSearchResults(results)
-                            datadogLogs.logger.info("SEARCH_RESULTS", {
+                            /* UNCOMMENT  */datadogLogs.logger.info("SEARCH_RESULTS", {
                                 searchTerm: inputData.search,
                                 results: results,
                             })

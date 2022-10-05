@@ -43,6 +43,7 @@ function performQuery(query: any, responseFunction: any) {
             "Authorization" : "ApiKey " + READONLY_API_KEY
         },
         params: {
+            size:30,
             source: JSON.stringify(query), source_content_type: 'application/json'
         },
     }).then((response) => {

@@ -15,12 +15,12 @@ export default function RecentSearches () {
     // const terms = props.terms; 
     
     <div >
-        <h2>Things we've searched for...</h2>
+        <h2>Community curated resources for </h2>
         <div className="App-recentSearches">
-            <div className="item">heal</div>
-            <div className="item">indigenous</div>
-            <div className="item">technology</div>
-            <div className="item">salad</div>
+            <div className="item">HNS</div>
+            <div className="item">IPFS</div>
+            <div className="item">Vc</div>
+            <div className="item">Search</div>
         </div>
       
     </div>
