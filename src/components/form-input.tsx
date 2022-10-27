@@ -20,6 +20,5 @@ export default function FormInput(props: FormInputProps) {
         }} onChange={(e) => {
             handleOnChange(e)}
         } value={props.value} type="text" id="fname" name="fname" style={props.style}/>
-
     )
 }

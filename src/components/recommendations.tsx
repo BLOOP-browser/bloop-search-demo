@@ -3,8 +3,8 @@ import FormInput from './form-input';
 import { postContent } from '../utils/elastic-utils'
 export default function Recommendations() {
     let formRef = createRef<HTMLFormElement>()
-    const [linkValue, setLinkValue] = useState({value: "Please Enter Link"})
-    const [descriptionValue, setDescriptionValue] = useState({value: "Please Enter Description"})
+    const [linkValue, setLinkValue] = useState({value: "The URL of your recommendation"})
+    const [descriptionValue, setDescriptionValue] = useState({value: "Any comments and #tags"})
     const [visValue, setVisValue] = useState({visibility: false})
     useEffect(() => {
         if (formRef.current) {
@@ -26,19 +26,21 @@ export default function Recommendations() {
             console.log(response)
         })
         setVisValue({visibility: true})
+        console.log("what does the submit do?")
 
     }
     
     return(
     <div>
-        <h2> Recommendation Form </h2>
+        <h2> Recommend to BLOOP </h2>
         <form ref={formRef} onSubmit={submit}>
             <FormInput value={linkValue.value} setValue={setLinkValue}></FormInput><br/>
             <FormInput value={descriptionValue.value} setValue={setDescriptionValue} 
-                style={{"width": 300, "height": 150}}/><br/>
+                style={{"width": 800, "height": 200}}/><br/>
         </form>
-        <button onClick={submit}> ENTER </button> 
-        { !visValue.visibility ? '' : <p> Thanks for your suggestion!</p>}
+        <button onClick={submit} > ENTER </button> {        
+            !visValue.visibility ? '' : <h3> Thanks for your suggestion! You can now search this in BLOOP</h3>}
+            
     </div>
     )
 }
