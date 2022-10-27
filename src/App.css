@@ -146,7 +146,7 @@ h3{
 
 input[type=text], select {
   width: 800px;
-  font-size: 2em;
+  font-size: 2.5em;
   overflow-wrap: break-word;
   padding: 12px 20px;
   margin: 10px;
@@ -158,7 +158,7 @@ input[type=text], select {
 }
 
 button{
-  font-size: 1.5em;
+  font-size: 3em;
   color: white;
   font-style: bold;
   background-color: black;

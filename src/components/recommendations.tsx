@@ -38,7 +38,7 @@ export default function Recommendations() {
             <FormInput value={descriptionValue.value} setValue={setDescriptionValue} 
                 style={{"width": 800, "height": 200}}/><br/>
         </form>
-        <button onClick={submit} > ENTER </button> {        
+        <button onClick={submit} > SUBMIT </button> {        
             !visValue.visibility ? '' : <h3> Thanks for your suggestion! You can now search this in BLOOP</h3>}
             
     </div>
