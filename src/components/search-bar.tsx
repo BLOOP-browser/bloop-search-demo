@@ -30,7 +30,7 @@ export function SearchBar(props: any) {
 
     return <div  ref={ref}>
         <input className="App-searchbarcss"
-            placeholder= "Search curated websites..."
+            placeholder= "Search community resources..."
             type="search"
             value={inputData.search} 
             onKeyDown={

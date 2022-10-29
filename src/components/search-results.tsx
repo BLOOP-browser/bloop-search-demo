@@ -6,7 +6,7 @@ import cheerio from 'cheerio'
 import '../App.css';
 import { Link } from 'react-router-dom'
 
-const DEFAULT_EMPTY = "Oops! Looks like your search does not have results yet, would you like to"  
+const DEFAULT_EMPTY = "No results for this search term yet. "  
 
 type SearchResultComponentProps = {
     results: Array<Result>;
@@ -23,7 +23,7 @@ export function SearchResultComponent(props: SearchResultComponentProps) {
     
     return (
         <div>
-            { listItems.length > 0 ? <ul className='App-results'>{listItems}</ul> : <h3> {DEFAULT_EMPTY} <Link to="/recs"> submit something instead? </Link> </h3> }
+            { listItems.length > 0 ? <ul className='App-results'>{listItems}</ul> : <h3> {DEFAULT_EMPTY} <Link to="/recs"> Submit something instead? </Link> </h3> }
         </div>
     );
 }
