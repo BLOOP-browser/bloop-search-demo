@@ -50,7 +50,9 @@ export function SearchBar(props: any) {
                             console.log("should have ran")
                         })
                     }
+                    /* add another if loop here for querying based on tag cloud. how to connect the recent-searches.tsx with search-bar.tsx? global variable needed? Answer: export the inputData from recent-searches.tsx using this https://bobbyhadz.com/blog/typescript-import-variable-from-another-file*/
                 }
+                
             }
             onChange={(e) => {
                 handleOnChange(e)}}>

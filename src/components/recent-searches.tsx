@@ -9,6 +9,26 @@ type searchTerms = {
     terms(results: Array<Result>): null;
 }
 
+// This function will be triggered when the headline is clicked
+const tagClickedHandler = (
+  event: React.MouseEvent<HTMLElement>
+) => {
+  event.stopPropagation();
+
+  const tag = event.currentTarget;
+  console.log(
+    "Element text content: ",
+    tag.textContent,
+    "Width: ",
+    tag.clientWidth,
+    "Height: ",
+    tag.clientHeight
+  );
+
+  /* export const */
+};
+
+
 export default function RecentSearches () {
   
   return (
@@ -17,10 +37,10 @@ export default function RecentSearches () {
     <div >
         <h2>Community curated resources for </h2>
         <div className="App-recentSearches">
-            <div className="item">HNS</div>
-            <div className="item">IPFS</div>
-            <div className="item">Vc</div>
-            <div className="item">Search</div>
+            <div className="item" onClick={tagClickedHandler}>HNS</div>
+            <div className="item" onClick={tagClickedHandler}>IPFS</div>
+            <div className="item" onClick={tagClickedHandler}>Vc</div>
+            <div className="item" onClick={tagClickedHandler}>Search</div>
         </div>
       
     </div>
