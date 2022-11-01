@@ -1,6 +1,5 @@
-
-import React from 'react'
-import Result from '../types/results'
+import React, { useRef, useState } from 'react';
+import Result from '../types/results';
 import '../App.css';
 
 // const arrOfObj = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -9,25 +8,35 @@ type searchTerms = {
     terms(results: Array<Result>): null;
 }
 
+declare var clickedTag: any;
+
 // This function will be triggered when the headline is clicked
 const tagClickedHandler = (
   event: React.MouseEvent<HTMLElement>
 ) => {
   event.stopPropagation();
-
-  const tag = event.currentTarget;
+  
+  
+  const tag : HTMLElement= event.currentTarget;
+    if (tag.textContent !== null) {
+      clickedTag = tag.textContent;
+      console.log("clickedTag set")
+    }
   console.log(
     "Element text content: ",
     tag.textContent,
-    "Width: ",
+    " Width: ",
     tag.clientWidth,
-    "Height: ",
-    tag.clientHeight
+    " Height: ",
+    tag.clientHeight,
+    " Clicked tag: ",
+    /* clickedTag */  /* this is undefined, meaning the if loop up  there didn't work. The if loop for !==null is necessary for the export, so can't get rid of it. Maybe there's a formatting thing that went wrong in the if loop. Okay, after commenting out the clickedTag, it seems clear that there is an issue with the for loop. will push this just for legacy purposes, and undo to last commit*/
   );
 
   /* export const */
 };
 
+/* export const tagstr = clickedTag;  this has an issue where the export is initiated before the click event. problem is that when i try to put this export within the tagClickedHandler, there is an error that modifiers are not allowed here*/
 
 export default function RecentSearches () {
   
