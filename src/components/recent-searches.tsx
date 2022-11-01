@@ -8,7 +8,8 @@ type searchTerms = {
     terms(results: Array<Result>): null;
 }
 
-declare var clickedTag: any;
+// const [clickedTag, setClickedTag ] = useState('');
+
 
 // This function will be triggered when the headline is clicked
 const tagClickedHandler = (
@@ -17,11 +18,8 @@ const tagClickedHandler = (
   event.stopPropagation();
   
   
-  const tag : HTMLElement= event.currentTarget;
-    // if (tag.textContent !== null) {
-    //   clickedTag = tag.textContent;
-    //   console.log("clickedTag set")
-    // }
+  const tag : HTMLElement= event.currentTarget;  
+    
   console.log(
     "Element text content: ",
     tag.textContent,
@@ -30,7 +28,7 @@ const tagClickedHandler = (
     " Height: ",
     tag.clientHeight,
     // " Clicked tag: ",
-    /* clickedTag */  /* this is undefined, meaning the if loop up  there didn't work. The if loop for !==null is necessary for the export, so can't get rid of it. Maybe there's a formatting thing that went wrong in the if loop. Okay, after commenting out the clickedTag, it seems clear that there is an issue with the for loop. will push this just for legacy purposes, and undo to last commit*/
+    /* clickedTag */  /* this is undefined, meaning the if loop up  there didn't work. The if loop for !==null is necessary for the export, so can't get rid of it. Maybe there's a formatting thing that went wrong in the if loop. Okay, after commenting out the clickedTag, it seems clear that there is an issue with the for loop. will push this just for legacy purposes, and undo to last commit. There could also be an issue with how I declared the variable clickedTag*/
   );
 
   /* export const */
