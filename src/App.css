@@ -142,7 +142,8 @@ h3{
   background-color: grey;
   color: white;
   border-radius: 18px;
-  padding: 5px 13px;
+  padding: 9px 22px;
+  margin-block: 10px;
   border-color: black;
   border-width: 3px;
 }

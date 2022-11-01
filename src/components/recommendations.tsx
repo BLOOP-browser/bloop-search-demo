@@ -39,7 +39,7 @@ export default function Recommendations() {
                 style={{"width": 800, "height": 200}}/><br/>
         </form>
         <button onClick={submit} > SUBMIT </button> {        
-            !visValue.visibility ? '' : <h3> Thanks for your suggestion! You can now search this in BLOOP</h3>}
+            !visValue.visibility ? '' : <h3> Thanks for your suggestion! This is now searchable at demo.getbloop.co</h3>}
             
     </div>
     )
