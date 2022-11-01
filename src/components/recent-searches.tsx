@@ -18,10 +18,10 @@ const tagClickedHandler = (
   
   
   const tag : HTMLElement= event.currentTarget;
-    if (tag.textContent !== null) {
-      clickedTag = tag.textContent;
-      console.log("clickedTag set")
-    }
+    // if (tag.textContent !== null) {
+    //   clickedTag = tag.textContent;
+    //   console.log("clickedTag set")
+    // }
   console.log(
     "Element text content: ",
     tag.textContent,
@@ -29,7 +29,7 @@ const tagClickedHandler = (
     tag.clientWidth,
     " Height: ",
     tag.clientHeight,
-    " Clicked tag: ",
+    // " Clicked tag: ",
     /* clickedTag */  /* this is undefined, meaning the if loop up  there didn't work. The if loop for !==null is necessary for the export, so can't get rid of it. Maybe there's a formatting thing that went wrong in the if loop. Okay, after commenting out the clickedTag, it seems clear that there is an issue with the for loop. will push this just for legacy purposes, and undo to last commit*/
   );
 
